@@ -1,0 +1,58 @@
+<template name="gamesPlay">
+
+    <div class="row">
+        <!-- <div class="col-md-4 selectPlayer">
+            <select size="30" class="playersSelectBox">
+                {{#each players}}
+                    {{#if isGoalkeeper}}
+                        <option style="background-color: #2ec931;" value="{{_id}}">GK - {{firstName}} {{lastName}}</option>
+                    {{else}}
+                        <option value="{{_id}}">{{squadNumber}} - {{firstName}} {{lastName}}</option>
+                    {{/if}}
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="col-md-3 selectEvent">
+            <select size="30" class="eventsSelectBox">
+                {{#each events}}
+                    <option value="{{_id}}">{{name}}</option>
+                {{/each}}
+            </select>
+        </div>
+
+        <div class="col-md-2"> -->
+        <div class="actionButtons selectEvent">
+          {{#each events}}
+            <button type="button" class="btn btn-lg btn-border customSize"><option value="{{_id}}">{{name}}</option></button>
+            {{/each}}
+        </div>
+        <div class="rightButtons selectPlayer">
+          {{#each players}}
+            {{#if isGoalkeeper}}
+              <button type="button" class="btn btn-lg btn-fram btn-border customSize2" style="color: #2ec931;" ><option value="{{_id}}">GK - {{firstName}}</option></button>
+            {{else}}
+              <button type="button" class="btn btn-lg btn-fram btn-border customSize2" ><option value="{{_id}}">{{squadNumber}} - {{firstName}}</option></button>
+            {{/if}}
+          {{/each}}
+
+
+            <div class="toggleHalftime">
+                <p>Muna að yta á þetta fyrir leik!!!</p>
+                {{#if isHalftime}}
+                    <button class="btn btn-danger toggleHalftimeButton">Fyrri hálfleikur</button>
+                {{else}}
+                    <button class="btn btn-warning toggleHalftimeButton">Seinni hálfleikur</button>
+                {{/if}}
+                <h4>Fríköst: {{freeThrows}}</h4>
+            </div>
+        </div>
+        <button type="button" class="btn btn-danger btn-lg decrementFreeThrows"><span class="glyphicon glyphicon-minus"></span></button>
+        <button type="button" class="btn btn-success btn-lg incrementFreeThrows"><span class="glyphicon glyphicon-plus"></span></button>
+        <!-- <button style="" type="button" name="button" class="btn btn-lg btn-fram confirmEvent">Staðfesta</button> -->
+
+        <button id= "gamesDashboard" class="btn btn-warning endGameButton">Leikur búinn</button>
+    <!-- </div> -->
+
+</div>
+</template>

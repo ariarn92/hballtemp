@@ -1,0 +1,27 @@
+<template name="players">
+
+    <a href="{{pathFor 'insertPlayers'}}"><button type="button" class="btn btn-primary">Bæta við leikmanni</button></a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th># Númer</th>
+                <th>Fullt nafn</th>
+                <th></th>
+                <th>Aðgerðir</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each players}}
+                <tr>
+                    <td>{{squadNumber}}</td>
+                    <td>{{firstName}} {{lastName}}</td>
+                    <td></td>
+                    <td>
+                        <a href="{{pathFor 'editPlayers'}}"><button class="btn btn-warning btn-xs">Breyta</button></a>
+                        <button class="btn btn-danger btn-xs deletePlayer">Eyða</button>
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</template>

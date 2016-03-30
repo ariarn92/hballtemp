@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body {
+    padding-top: 70px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@framColor: #007ac3;
+
+/* navbar */
+.navbar-default {
+    background-color: @framColor;
+    border-color: #E7E7E7;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+    }
+}
+
+.btn-fram {
+    background-color: @framColor;
+    color: #fff;
+}
+.btn-border {
+  border: 1px solid black;
+  color: black;
+}
+
+.playerList {
+    li {
+        border-top: 1px solid @framColor;
+        border-bottom: 1px solid @framColor;
+        padding: 10px 0;
+        height: 90px;
+
+        .squadNumber {
+            font-size: 30px;
+            font-weight: bold;
+            color: @framColor;
+        }
+
+        .playerName {
+            font-size: 30px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .profileImage {
+
+            float: left;
+            width: 70px;
+            margin-right: 15px;
+            height: 70px;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.selectPlayer {
+    float: left;
+    select {
+        width: 330px;
+        height: 700px;
+        font-size: 18px;
+
+        option {
+            border: 1px solid #666;
+            padding: 5px;
+        }
+    }
+}
+
+.selectEvent {
+    float: left;
+    select {
+        width: 275px;
+        height: 900px;
+        font-size: 18px;
+
+        option {
+            border: 1px solid #666;
+            padding: 5px;
+        }
+    }
+}
+actionButtons {
+  .confirmEvent{
+    width:120px;
+    height:150px;
+  }
+}
+.rightButtons {
+    //border: 1px solid black;
+
+    .confirmEvent {
+        width:120px;
+        height:150px;
+    }
+
+    .toggleHalftime {
+        margin: 20px 0;
+    }
+}
+
+.newsFeed {
+    border: 1px solid #ccc;
+    height: 261px;
+    overflow: scroll;
+}
+
+.scoringChart {
+    width: 700px;
+}
+
+.customSize {
+    width: 280px !important;
+    height: 70px;
+}
+.customSize2 {
+    width: 220px !important;
+    height: 70px;
+}

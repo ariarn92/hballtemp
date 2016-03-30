@@ -1,0 +1,89 @@
+<template name="gamesDashboard">
+
+    {{#if gameHasStarted}}Leikurinn er í gangi!{{/if}}
+
+    <div class="row">
+        <div class="col-md-4 newsFeed">
+            <h4>Seinstu atburðir í leiknum</h4>
+            <ul class="list-unstyled">
+                    {{#each newsFeed}}
+                        <li><small>{{time}}</small><br />{{player}} {{message}}</li>
+                    {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tegund</th>
+                        <th>Markmið</th>
+                        <th>Raun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Markvarsla</td>
+                        <td>42%</td>
+                        <td>{{saveRatio}}%</td>
+                    </tr>
+                    <tr>
+                        <td>Fríköst</td>
+                        <td>30</td>
+                        <td>{{getFreeThrows}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tapaðir boltar</td>
+                        <td>10</td>
+                        <td>{{lostBalls}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fengin mörk</td>
+                        <td>10</td>
+                        <td>{{opponentGoals}}</td>
+                    </tr>
+                    <tr>
+                        <td>Skotnýting</td>
+                        <td>50%</td>
+                        <td>{{skotnyting}}%</td>
+                    </tr>
+                    <tr>
+                        <td>Sóknarnýting</td>
+                        <td>50%</td>
+                        <td>{{soknarnyting}}%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- <div class="col-md-5">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nafn</th>
+                        <th>Stig</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each framlag}}
+                        <tr>
+                            <td>{{math @index "+" 1}}</td>
+                            <td>{{name}}</td>
+                            <td>{{score}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div> -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 scoringChart">
+            <canvas id="theWeek" width="450" height="250"></canvas>
+            <div style="height: 20px; width: 120px; background-color: #D65251; color: white; padding: 0 5px; text-align: center; float: left;">Fyrri hálfleikur</div>
+            <div style="margin: 0 5px; height: 20px; width: 120px; background-color: #14acde; color: white; padding: 0 5px; text-align: center; float: left;">Seinni hálfleikur</div>
+        </div>
+    </div>
+
+</template>

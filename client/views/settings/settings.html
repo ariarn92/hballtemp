@@ -1,0 +1,47 @@
+<template name="settings">
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <div class="form-group">
+                    <label for="name">Nafn félags</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="" value="{{currentUser.profile.name}}">
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="newPassword">Nýtt lykilorð</label>
+                    <input type="password" class="form-control" id="newPassword" name="newPassword" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="newPasswordConfirm">Staðfesta nýtt lykilorð</label>
+                    <input type="password" class="form-control" id="newPasswordConfirm" name="newPasswordConfirm" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Staðfesta</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nafn</th>
+                        <th>Unique identity</th>
+                        <th>Stig</th>
+                        <th>Aðgerðir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each eventTypes}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{identity}}</td>
+                            <td>{{points}}</td>
+                            <td>
+                                <a href="{{pathFor 'eventTypes'}}"><button class="btn btn-warning btn-xs">Breyta</button></a>
+                                <button class="btn btn-danger btn-xs deletePlayer">Eyða</button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

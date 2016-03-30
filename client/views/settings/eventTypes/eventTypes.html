@@ -1,0 +1,28 @@
+<template name="eventTypes">
+
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <div class="form-group">
+                    <label for="name">Nafn</label>
+                    <input type="text" class="form-control" id="name" placeholder="" value="{{name}}">
+                </div>
+                <div class="form-group">
+                    <label for="identity">Unique identity <span style="color:red;">Fara varlega í að breyta þessu!!</span></label>
+                    <input type="text" class="form-control" id="identity" placeholder="" value="{{identity}}">
+                </div>
+                <div class="form-group">
+                    <label for="message">Lýsing</label>
+                    <input type="text" class="form-control" id="message" placeholder="" value="{{message}}">
+                </div>
+                <div class="form-group">
+                    <label for="points">Hversu mörg stig gefur þetta?</label>
+                    <input type="text" class="form-control" id="points" placeholder="" value="{{points}}">
+                </div>
+                <button type="submit" class="btn btn-success">Staðfesta breytingar</button>
+            </form>
+        </div>
+    </div>
+
+
+</template>
