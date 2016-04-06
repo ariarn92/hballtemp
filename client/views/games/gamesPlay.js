@@ -78,7 +78,7 @@ Template.gamesPlay.events({
         halftime: halfleikur,
         createdAt: new Date()
   }),
-  reiknaFramlag(gameId, playerId, eventId);
+  // reiknaFramlag(gameId, playerId, eventId);
 
   console.log("New event created");
 },
@@ -119,7 +119,6 @@ Template.gamesPlay.events({
     "click .endGameButton": function(event) {
         Session.set('selectedFixture', this._id);
         console.log(this._id);
-
         //gameIsFinished.update=1;
 
         Router.go('gamesDashboard', {

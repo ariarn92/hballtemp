@@ -61,6 +61,7 @@ Template.gamesDashboard.onRendered(function () {
 });
 
 Template.gamesDashboard.helpers({
+
     getFreeThrows: function() {
         var freeThrows = this.freeThrows;
         if (freeThrows) {
@@ -81,12 +82,13 @@ Template.gamesDashboard.helpers({
         for (var i = 0; i < events.length; i++) {
             messages.push({
                 time: moment(events[i].createdAt).fromNow(),
-                player: Players.findOne({_id: events[i].playerId}).firstName,
-                message: EventTypes.findOne({_id: events[i].eventId}).message
+                player: Players.findOne({_id: events[i].playerId}) && Players.findOne({_id: events[i].playerId}).firstName,
+                message: EventTypes.findOne({_id: events[i].eventId}) && EventTypes.findOne({_id: events[i].eventId}).message
+                //Komu alltaf villur útaf þessu þannig ég "guardaði" player og message með því að splitta því, sbr línurnar hér að ofan
             });
         }
 
-        console.log("MEssages: " + messages);
+        console.log("Messages: " + messages);
 
         return messages;
     },
@@ -167,6 +169,23 @@ Template.gamesDashboard.helpers({
             return percentage.toFixed(2) * 100;
         }
     },
+
+    timelastgoal: function(){
+        var eventTypes = EventTypes.find({identity: {$regex : ".*scored.*"}}).fetch();
+        var events = Events.find({}, {sort: {createdAt: -1}}).fetch();
+
+        var messages = [];
+
+          for (var i = 0; i < events.length; i++) {
+              messages.push({
+                  time: moment(events[i].createdAt).fromNow(),
+              });
+            return messages;
+          }
+    },
+
+
+
     skotnyting: function() {
         // Markmenn
         var goalkeepersId = [];
@@ -177,6 +196,7 @@ Template.gamesDashboard.helpers({
 
         var identities = [];
         var eventTypes = EventTypes.find({identity: {$regex : ".*scored.*"}}).fetch();
+
 
         for (var i = 0; i < eventTypes.length; i++) {
             identities.push(eventTypes[i]._id);
