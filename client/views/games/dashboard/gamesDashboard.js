@@ -84,7 +84,7 @@ Template.gamesDashboard.helpers({
                 time: moment(events[i].createdAt).fromNow(),
                 player: Players.findOne({_id: events[i].playerId}) && Players.findOne({_id: events[i].playerId}).firstName,
                 message: EventTypes.findOne({_id: events[i].eventId}) && EventTypes.findOne({_id: events[i].eventId}).message
-                //Komu alltaf villur útaf þessu þannig ég "guardaði" player og message með því að splitta því, sbr línurnar hér að ofan
+                //Komu alltaf villur útaf þessu þannig ég guardaði player og message með því að splitta því, sbr línurnar hér að ofan
             });
         }
 
@@ -173,6 +173,7 @@ Template.gamesDashboard.helpers({
     timelastgoal: function(){
         var eventTypes = EventTypes.find({identity: {$regex : ".*scored.*"}}).fetch();
         var events = Events.find({}, {sort: {createdAt: -1}}).fetch();
+        var data = topPlayers();
 
         var messages = [];
 
