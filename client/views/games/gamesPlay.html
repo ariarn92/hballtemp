@@ -1,6 +1,7 @@
 <template name="gamesPlay">
 
-    <div class="row">
+    <div class="container-fluid">
+      <div class="row">
         <!-- <div class="col-md-4 selectPlayer">
             <select size="30" class="playersSelectBox">
                 {{#each players}}
@@ -19,15 +20,10 @@
                     <option value="{{_id}}">{{name}}</option>
                 {{/each}}
             </select>
-        </div>
+        </div> -->
 
-        <div class="col-md-2"> -->
-        <div class="actionButtons selectEvent">
-          {{#each events}}
-            <button type="button" class="btn btn-lg btn-border customSize"><option value="{{_id}}">{{name}}</option></button>
-            {{/each}}
-        </div>
-        <div class="rightButtons selectPlayer">
+        <div class="col-md-3 rightButtons selectPlayer">
+        <!-- <div class="rightButtons selectPlayer"> -->
           {{#each players}}
             {{#if isGoalkeeper}}
               <button type="button" class="btn btn-lg btn-fram btn-border customSize2" style="color: #2ec931;" ><option value="{{_id}}">GK - {{firstName}}</option></button>
@@ -45,13 +41,37 @@
                     <button class="btn btn-warning toggleHalftimeButton">Seinni hálfleikur</button>
                 {{/if}}
                 <h4>Fríköst: {{freeThrows}}</h4>
+            <!-- </div> -->
             </div>
+            <button type="button" class="btn btn-danger btn-lg decrementFreeThrows"><span class="glyphicon glyphicon-minus"></span></button>
+            <button type="button" class="btn btn-success btn-lg incrementFreeThrows"><span class="glyphicon glyphicon-plus"></span></button>
         </div>
-        <button type="button" class="btn btn-danger btn-lg decrementFreeThrows"><span class="glyphicon glyphicon-minus"></span></button>
-        <button type="button" class="btn btn-success btn-lg incrementFreeThrows"><span class="glyphicon glyphicon-plus"></span></button>
+
+        <div class="dropdown">
+        <div class="col-md-6 actionButtons selectEvent">
+          {{#each events}}
+            <button type="button" class="btn btn-lg btn-border customSize dropdown-toggle" data-toggle="dropdown"><option value="{{_id}}">{{name}}</option></button>
+            <ul class="dropdown-menu" role="menu">
+              <li class ="dropdown"><a href="#">Tablet</a></li>
+              <li class ="dropdown"><a href="#">Bluh</a></li>
+            </ul>
+            {{/each}}
+          </div>
+        </div>
+        <div class="col-md-3 rightButtons selectPlayer2">
+          {{#each players}}
+            {{#if isGoalkeeper}}
+              <button type="button" class="btn btn-lg btn-fram btn-border customSize2" style="color: #2ec931;" ><option value="{{_id}}">GK - {{firstName}}</option></button>
+            {{else}}
+              <button type="button" class="btn btn-lg btn-fram btn-border customSize2" ><option value="{{_id}}">{{squadNumber}} - {{firstName}}</option></button>
+            {{/if}}
+          {{/each}}
+        </div>
+
 
         <button id= "gamesDashboard" class="btn btn-warning endGameButton">Leikur búinn</button>
     <!-- </div> -->
 
+</div>
 </div>
 </template>
