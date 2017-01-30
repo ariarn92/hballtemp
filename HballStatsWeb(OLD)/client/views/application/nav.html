@@ -4,17 +4,17 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
+                    <!-- <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> -->
                 </button>
-                <a class="navbar-brand" href="{{pathFor 'home'}}">HBallstats</a>
+                <a class="navbar-brand" href="{{pathFor 'home'}}">Sigma</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <!-- <ul class="nav navbar-nav">
                     <li class="{{isActiveRoute 'games'}}"><a href="{{pathFor 'games'}}">Leikir</a></li>
                     <li class="{{isActiveRoute 'players'}}"><a href="{{pathFor 'players'}}">Leikmenn</a></li>
-                </ul>
+                </ul> -->
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{pathFor 'settings'}}">Stillingar</a></li>
                     <li><a href id="logout">Útskrá</a></li>
@@ -22,4 +22,38 @@
             </div>
         </div>
     </nav>
+    <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Vinsamlega skráið dagsetningu á leik!</h3>
+        </div>
+          <div class="panel-body">
+            <form>
+              <fieldset>
+                <div class="form-group">
+                  <input class="form-control" placeholder="Dagsetning" name="date" type="date" autofocus>
+                </div>
+              <input class="btn btn-lg btn-success btn-block" type="submit" value="Áfram">
+            </fieldset>
+              </form>
+          </div>
+      </div>
+      <!-- <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Vinsamlega skráið mótherja!</h3>
+      </div>
+        <div class="panel-body">
+          <form>
+            <fieldset>
+              <div class="form-group">
+                <input class="form-control" placeholder="Mótherji" name="opponent" type="form" autofocus>
+              </div>
+            <input class="btn btn-lg btn-success btn-block" type="submit" value="Áfram">
+          </fieldset>
+            </form>
+        </div>
+    </div> -->
+    </div>
+  </div>
 </template>
